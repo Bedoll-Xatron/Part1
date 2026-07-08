@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* ── TradingView-inspired design tokens ────────────────────── */
+:root {
+  --bg-base:       #0d1117;
+  --bg-panel:      #131722;
+  --bg-card:       #1a1f2e;
+  --bg-hover:      #1e2635;
+  --bg-elevated:   #252d3d;
+  --border:        rgba(42, 52, 71, 0.8);
+  --border-subtle: rgba(42, 52, 71, 0.45);
+  --text-primary:  #d1d4dc;
+  --text-muted:    #787b86;
+  --text-dim:      #4a5568;
+  --accent:        #2962ff;
+  --accent-soft:   rgba(41, 98, 255, 0.12);
+  --profit:        #26a69a;
+  --profit-soft:   rgba(38, 166, 154, 0.12);
+  --loss:          #ef5350;
+  --loss-soft:     rgba(239, 83, 80, 0.12);
+  --amber:         #f59e0b;
+  --violet:        #7c3aed;
+
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, 'Inter', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  {
+  background: rgba(120, 123, 134, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(120, 123, 134, 0.45); }
+
+/* ── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: rgba(41, 98, 255, 0.25);
+  color: #d1d4dc;
+}
+
+/* ── Transitions ───────────────────────────────────────────── */
+* { transition-property: color, background-color, border-color, opacity;
+    transition-duration: 120ms; transition-timing-function: ease; }

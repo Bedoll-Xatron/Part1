@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-17",
+  "total_scanned": 50,
+  "vcp_detected": 1,
+  "signals": [
+    {
+      "code": "042700",
+      "name": "한미반도체",
+      "market": "KOSPI",
+      "grade": "B",
+      "score": 20,
+      "c1": 34.98,
+      "c2": 29.24,
+      "c3": 20.0,
+      "r12": 1.2,
+      "r23": 1.46,
+      "pivot_high": 372500.0,
+      "foreign_5d": -15041,
+      "inst_5d": 1003023
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "date": "2026-05-22",
+  "total_candidates": 30,
+  "filtered_count": 3,
+  "signals": [
+    {
+      "stock_code": "274090",
+      "stock_name": "켄코아에어로스페이스",
+      "market": "KOSDAQ",
+      "signal_date": "2026-05-24",
+      "grade": "A",
+      "score": {
+        "news": 2,
+        "volume": 1,
+        "chart": 1,
+        "candle": 1,
+        "consolidation": 0,
+        "supply": 2,
+        "retracement": 1,
+        "pullback_support": 1,
+        "alpha_score": 2,
+        "vcp_bonus": 0,
+        "squeeze_bonus": 0,
+        "timing_score": 0,
+        "llm_reason": "스페이스X 조기 상장 기대감과 미-이란 지정학적 리스크 부각으로 우주항공 및 방산 테마의 강한 상승 모멘텀을 받아 신고가를 경신했습니다.",
+        "total": 11
+      },
+      "checklist": {
+        "mandatory": {
+          "has_news": true,
+          "news_sources": [
+            "우주항공",
+            "방산"
+          ],
+          "volume_sufficient": true
+        },
+        "optional": {
+          "is_new_high": false,
+          "is_breakout": false,
+          "ma_aligned": true,
+          "good_candle": true,
+          "upper_wick_long": false,
+          "has_consolidation": false,
+          "supply_positive": true,
+          "retracement_recovery": true,
+          "pullback_support_confirmed": true,
+          "volatility_squeeze": false,
+          "volume_breakout": false,
+          "rsi_strong": true,
+          "price_near_high": false,
+          "near_new_high": false,
+          "momentum_accelerating": true,
+          "vcp_detected": false,
+          "macd_golden_cross": false,
+          "bb_squeeze": false,
+          "stoch_bullish": true
+        },
+        "negative": {
+          "negative_news": false
+        }
+      },
+      "current_price": 28500,
+      "entry_price": 28500,
+      "stop_price": 27075,
+      "target_price": 32775,
+      "r_value": 50000.0,
+      "position_size": 1995000,
+      "quantity": 70,
+      "r_multiplier": 2.0,
+      "trading_value": 74270000000,
+      "change_pct": 11.55,
+      "foreign_5d": 236380,
+      "inst_5d": 39678,
+      "quality": 75.0,
+      "news_items": [
+        {
+          "title": "스페이스X 조기 상장 소식에 우주항공 테마 강세…관련주 신고가 행진.....",
+          "summary": "아주IB투자 주가 추이 [사진=매경 자이앤트 텔레그램] 19일 국내 증시에서 신고가를 기록한 종목 수가 많지 않은 가운데, 우주항공과 반도체 등 특정 테마에 대한 관심이 집중되는 모습을 보였다. 우주항공 관련 종목들이 동반 강세를 보이며 신고가를 기록했다. 아주IB투자는 7093억원의 거래대금을 동반하며 다시 한번 역사적 신고가를 경신했다. 켄코아에어로스페이스 역시 3567억원의 거래가 이뤄지며 새롭게 역사적 신고가를 쓰는 모습을 보였다. 이 외에도 영우디에스피가 52주 신고가를 달성했다. 켄코아에어로스페이스 주가 추이 [사진=매경 자이앤트 텔레그램] 스페이스X가 시장 예상보다 이르게 상장할 거라는 소식이 전해지며 우주항공 테마 투자심리가 자극된 거롤 풀이된다. 로이터 등 외신에 따르면 스페이스X는 다음 달 12일 나스닥 상장을 목표로 하고 있다. 이는 일론 머스크의 생일인 다음달 28일 전후 상장할 거라는 기존 전망보다 앞당겨진 것이다. 스페이스X는 이번 IPO(기업공개)에서 1조..."
+        },
+        {
+          "title": "끝날 듯 안 끝나는 미·이란 전쟁…한화에어로 5%대 상승[핫종목](종합...",
+          "summary": "종전 불확실성 지속에 캐나다 전차 현대화 사업 기대 영향 한화 방산 3사의 WDS 2026 통합 전시부스에서 AI 기술 기반 미래형 통합 무기체계를 선보이는 모습. (한화 제공. 재판매 및 DB 금지) (서울=뉴스1) 박승희 기자 = 미국과 이란 간 종전 협상에 불확실성이 여전한 가운데 수주 기대감이 반영되면서 방산주가 일제히 상승 마감했다. 19일 한국거래소에 따르면 한화에어로스페이스(012450)는 전일 대비 5만 9000원(4.81%) 오른 128만 6000원에 거래를 마쳤다. 켄코아에어로스페이스(274090)(9.63%), LIG디펜스앤에어로스페이스(079550)(2.74%) 등이 상승했다. 스팩합병을 통해 상장한 케이피항공산업(288180) 또한 29.93% 올라 상한가로 장을 마쳤다. 반도체주 등 주요 종목들이 부진한 가운데 미·이란 종전 협상이 교착 상태를 보이며 방산주에 투심이 집중된 것으로 보인다. 도널드 트럼프 대통령은 중동 동맹국의 요청에 따라 이란에 대한 군사 ..."
+        },
+        {
+          "title": "美-이란 교착 상태 길어지면서 새로 주목받는 우주항공株",
+          "summary": "[오늘의 포인트] 한화에어로스페이스 최근 1년 주가 추이/그래픽=임종철 미국과 이란의 협상 교착 상태가 길어지면서 우주항공 업종이 강세를 나타내고 있다. 여기에 스페이스X 기업공개(IPO) 일정이 앞당겨진다는 소식이 더해지면서 주가에 탄력이 붙었다. 19일 한국거래소에 따르면 이날 한화에어로스페이스는 전일 대비 5만9000원(4.81%) 오른 128만6000원에 거래를 마쳤다. 한화에어로스페이스는 2거래일째 상승했다. 켄코아에어로스페이스는 전일 대비 2500원(9.63%) 오른 2만8450원에 장 마감했다. 이어 RF시스템즈(5.34%), LIG디펜스앤에어로스페이스(2.74%), 아이쓰리시스템(2.52%) 등이 강세를 나타냈다. 이들 업종은 우주항공과 국방 업종으로 분류된다. 해당 업종은 전일 대비 1.53% 상승했다. 업종 내 케이피항공산업도 기준가 대비 1만100원(29.93%) 오른 4만3850원을 기록, 가격제한선까지 뛰었다. 케이피항공산업은 이날 스펙 상장으로 증시에 입성해..."
+        }
+      ],
+      "themes": [
+        "우주항공",
+        "방산"
+      ]
+    },
+    {
+      "stock_code": "086520",
+      "stock_name": "에코프로",
+      "market": "KOSDAQ",
+      "signal_date": "2026-05-24",
+      "grade": "A",
+      "score": {
+        "news": 2,
+        "volume": 2,
+        "chart": 0,
+        "candle": 1,
+        "consolidation": 0,
+        "supply": 2,
+        "retracement": 1,
+        "pullback_support": 0,
+        "alpha_score": 2,
+        "vcp_bonus": 0,
+        "squeeze_bonus": 0,
+        "timing_score": 0,
+        "llm_reason": "에코프로가 코스닥 상위 10개 종목에 투자하는 신규 ETF에 편입되어 수급 개선이 기대되며, 코스닥 활성화 정책 모멘텀의 수혜를 받을 것으로 예상됩니다.",
+        "total": 10
+      },
+      "checklist": {
+        "mandatory": {
+          "has_news": true,
+          "news_sources": [
+            "2차전지",
+            "정책 모멘텀"
+          ],
+          "volume_sufficient": true
+        },
+        "optional": {
+          "is_new_high": false,
+          "is_breakout": false,
+          "ma_aligned": false,
+          "good_candle": true,
+          "upper_wick_long": false,
+          "has_consolidation": false,
+          "supply_positive": true,
+          "retracement_recovery": true,
+          "pullback_support_confirmed": false,
+          "volatility_squeeze": false,
+          "volume_breakout": true,
+          "rsi_strong": false,
+          "price_near_high": false,
+          "near_new_high": false,
+          "momentum_accelerating": true,
+          "vcp_detected": false,
+          "macd_golden_cross": false,
+          "bb_squeeze": false,
+          "stoch_bullish": true
+        },
+        "negative": {
+          "negative_news": false
+        }
+      },
+      "current_price": 146500,
+      "entry_price": 146500,
+      "stop_price": 139175,
+      "target_price": 168475,
+      "r_value": 50000.0,
+      "position_size": 1904500,
+      "quantity": 13,
+      "r_multiplier": 2.0,
+      "trading_value": 536212000000,
+      "change_pct": 12.87,
+      "foreign_5d": 896957,
+      "inst_5d": 148773,
+      "quality": 85.0,
+      "news_items": [
+        {
+          "title": "삼전 주식 액면분할 없었다면 1500만 원 ‘황제’ [비즈앤피플]",
+          "summary": "황제주의 세계 주당 100만 원 넘는 우량 종목 상징 기업 실적·성장성·시장 지배력 반영 국내 첫 황제주는 1999년 SK텔레콤 21일 종가 기준 최고가는 효성중공업 방산·로봇 관련주 ‘예비 황제주’ 주목 등극 후 요동 가능성… 투자 신중해야 서울 삼성전자 서초사옥에 삼성기가 펄럭이고 있다. 연합뉴스 꿈만 같았던 코스피가 7000P를 넘어 8000P를 향해 달려가면서 주가가 100만 원을 넘는, 이른바 ‘황제주’가 속속 등장하고 있다. 국내 증시가 박스권을 벗어나지 못했을 땐 드문드문 등장했고, 금세 사라지기도 했던 황제주가 마치 춘추전국시대 각지에서 군웅이 할거하듯 출현하고 있다. 특히 한때 한 주에 400만 원이 넘기도 한 초우량 황제주까지 등장해 위세를 떨치고 있다. 투자자들 사이에선 “한 주만 있더라도 든든하다”는 말이 나올 정도다. 반면 소액 투자자들에게는 여전히 ‘그림의 떡’ 같은 존재다. 코스피 7000시대, 황제주에 대해 살펴본다. ■황제주란, 그리고 역사는 황제주는 ..."
+        },
+        {
+          "title": "올해 115조 팔아치운 외국인, 귀환 언제[증시 수급 대전환①]",
+          "summary": "금리·환율 급등에 차익실현·리밸런싱 코스닥 '소부장·바이오' 중소형주 매수 [서울=뉴시스] 최진석 기자 = 코스피가 전 거래일(7815.59)보다 32.12포인트(0.41%) 오른 7847.71에 마감한 22일 서울 중구 하나은행 딜링룸에 코스피 종가가 보이고 있다. 코스닥 지수가 전 거래일(1105.97)보다 55.16포인트(4.99%) 상승한 1161.13에 거래를 마쳤다. 서울 외환시장에서 원·달러 환율은 전 거래일(1506.1원)보다 11.1원 오른 1517.2원에 주간 거래를 마감했다. 2026.05.22. myjs@newsis.com [서울=뉴시스] 강수윤 기자 = 올해 외국인 투자자가 국내 증시에서 115조원이 넘는 매도 폭탄을 쏟아내며 역대급 '셀 코리아'를 이어가는 가운데 본격적인 귀환 시점에 관심이 쏠린다. 23일 한국거래소에 따르면 올 들어 전날까지 외국인 투자자는 유가증권시장에서 115조원4419억원 어치 주식을 팔아치웠다. 외국인은 지난 1월 3조5195억원,..."
+        },
+        {
+          "title": "코스닥 상위주만 골라 담은 ETF…정책 모멘텀 올라탈까[ETF언박싱]",
+          "summary": "정책 모멘텀 기대 속 코스닥 상위주 압축 투자 알테오젠·에코프로·HLB·레인보우로보틱스 등 편입 동일 섹터 3종목 제한…바이오·2차전지 쏠림 완화 [이데일리 박순엽 기자] 코스닥 시장의 핵심 성장주에 압축 투자하는 상장지수펀드(ETF)가 등장했다. 코스닥 활성화 정책과 국민성장펀드 조성 등 정책 기대감이 이어지는 가운데, 시가총액 상위 종목을 중심으로 수급 기반이 상대적으로 탄탄한 기업을 선별해 담는 전략이다. 23일 한국거래소에 따르면 신한자산운용은 지난 19일 ‘SOL 코스닥TOP10’ ETF를 상장했다. 이 상품은 국내 대표 주가지수 중 하나인 코스닥지수 구성 종목 가운데 시가총액 상위 10개 기업으로 포트폴리오를 꾸리는 패시브 ETF다. (일러스트=챗GPT 생성 이미지) 최근 코스닥 시장은 정책 기대감과 성장주 투자심리가 맞물리며 다시 주목받고 있다. 정부가 코스닥 시장 경쟁력 강화와 수급 정상화, 시장 신뢰도 제고를 위한 제도 개선을 추진하는 가운데, 중소·벤처·혁신기업으로..."
+        }
+      ],
+      "themes": [
+        "2차전지",
+        "정책 모멘텀"
+      ]
+    },
+    {
+      "stock_code": "126340",
+      "stock_name": "비나텍",
+      "market": "KOSDAQ",
+      "signal_date": "2026-05-24",
+      "grade": "B",
+      "score": {
+        "news": 2,
+        "volume": 1,
+        "chart": 0,
+        "candle": 0,
+        "consolidation": 0,
+        "supply": 2,
+        "retracement": 1,
+        "pullback_support": 0,
+        "alpha_score": 2,
+        "vcp_bonus": 0,
+        "squeeze_bonus": 0,
+        "timing_score": 0,
+        "llm_reason": "DS투자증권의 긍정적 전망과 함께 슈퍼캡 독점 공급 유지, 하반기 시스템 사업화 및 증설에 따른 3분기부터의 본격적인 실적 확대가 기대됩니다.",
+        "total": 8
+      },
+      "checklist": {
+        "mandatory": {
+          "has_news": true,
+          "news_sources": [
+            "2차전지",
+            "연료전지"
+          ],
+          "volume_sufficient": true
+        },
+        "optional": {
+          "is_new_high": false,
+          "is_breakout": false,
+          "ma_aligned": false,
+          "good_candle": false,
+          "upper_wick_long": true,
+          "has_consolidation": false,
+          "supply_positive": true,
+          "retracement_recovery": true,
+          "pullback_support_confirmed": false,
+          "volatility_squeeze": true,
+          "volume_breakout": false,
+          "rsi_strong": false,
+          "price_near_high": false,
+          "near_new_high": false,
+          "momentum_accelerating": false,
+          "vcp_detected": false,
+          "macd_golden_cross": false,
+          "bb_squeeze": false,
+          "stoch_bullish": true
+        },
+        "negative": {
+          "negative_news": false
+        }
+      },
+      "current_price": 169000,
+      "entry_price": 169000,
+      "stop_price": 160550,
+      "target_price": 194349,
+      "r_value": 50000.0,
+      "position_size": 845000,
+      "quantity": 5,
+      "r_multiplier": 1.0,
+      "trading_value": 52794000000,
+      "change_pct": 19.1,
+      "foreign_5d": 64163,
+      "inst_5d": 19828,
+      "quality": 60.0,
+      "news_items": [
+        {
+          "title": "[이 시각 시황] 미정부, IBM 등 양자컴퓨팅 기업 9곳 3조원 지원",
+          "summary": "■ 머니쇼 '이 시각 시황' - 장연재 이 시각 시황입니다. 현재 국내증시 양대지수 강세 보여주고 있습니다. 다만, 코스닥 힘이 더 좋습니다. 코스피가 0.6% 강세로 7,859선에서 움직이고 있습니다. 코스닥도 3.5% 오르면서 1,145선에서 움직임 보여주고 있습니다. 수급 상황 보시죠. 유가증권 시장입니다. 외국인이 8,316억 원 팔아 냅니다. 반면, 기관이 1,615억 원, 개인이 7,186억 원 사들이고 있습니다. 코스닥 시장입니다. 외국인이 2,716억 원, 기관이 633억 원 사들입니다. 개인이 3,100억 원  매도 우위 기록 중입니다. 등락률 상하위 업종 살펴보시죠. 현재 에너지 장비 및 서비스, 컴퓨터와 주변 기기, 생물공학 업종이 상승률 상위권에 위치해 있습니다. 반면, 디스플레이패널, 백화점과 일반 상점, 자동차 부품 업종은 약세 기록 중입니다. 오늘(22일) 양자컴퓨터 관련주가 상승합니다. 앞서 뉴욕증시에서 미국 정부가 차세대 전략기술로 꼽히는 양자컴퓨터 산..."
+        },
+        {
+          "title": "3분기부터 본격 실적 확대 예상…비나텍 18%↑[특징주]",
+          "summary": "[이데일리 권오석 기자] 비나텍(126340) 주가가 장 초반 급등하고 있다. 증권가의 긍정적인 전망에 매수세가 몰리는 것으로 보인다. 22일 엠피닥터에 따르면 비나텍은 오전 9시 18분 기준으로 전 거래일 대비 18.39% 오른 16만 8000원에 거래되고 있다. 앞서 이날 DS투자증권은 보고서를 내고 비나텍에 대해 투자의견 ‘매수’와 목표주가 17만 7000원을 유지한다고 밝혔다. 안주원 DS투자증권 연구원은 “△해외 주요 고객사 내 슈퍼캡 셀 독점공급 유지 △하반기 시스템 사업화 등에 따른 실적 확대가 예상된다”며 “최근 국내외에서 슈퍼캡 사업을 통해 해외 진출을 추진하는 기업들이 늘어나고 있다. 비나텍은 이미 오랜 기간 주요 고객사 향으로 슈퍼캡 공급을 진행해 왔으며 신속한 대응을 위해 증설도 하고 있는 중”이라고 분석했다. 그러면서 “이에 따라 솔벤더로서의 지위 유지가 지속 가능하다 판단한다. 또한 시스템 사업 준비도 순항하고 있으며 하반기부터는 매출발생이 시작될 것으로 예..."
+        },
+        {
+          "title": "비나텍, 증설에 따른 본격 실적 확대 3분기부터…'매수'-DS",
+          "summary": "[이데일리 권오석 기자] DS투자증권이 비나텍(126340)에 대해 투자의견 ‘매수’와 목표주가 17만 7000원을 유지한다고 22일 밝혔다. 안주원 DS투자증권 연구원은 “△해외 주요 고객사 내 슈퍼캡 셀 독점공급 유지 △하반기 시스템 사업화 등에 따른 실적 확대가 예상된다”며 “최근 국내외에서 슈퍼캡 사업을 통해 해외 진출을 추진하는 기업들이 늘어나고 있다. 비나텍은 이미 오랜 기간 주요 고객사 향으로 슈퍼캡 공급을 진행해 왔으며 신속한 대응을 위해 증설도 하고 있는 중”이라고 분석했다. 그러면서 “이에 따라 솔벤더로서의 지위 유지가 지속 가능하다 판단한다. 또한 시스템 사업 준비도 순항하고 있으며 하반기부터는 매출발생이 시작될 것으로 예상된다”며 “시스템 공급이 더해지면 매출액과 영업이익 규모도 큰 폭으로 레벨업 된다. 여러 이유로 연료전지에 대한 수요가 늘어나고 있는 만큼 비나텍에 대한 수혜도 클 것”이라고 강조했다. 안 연구원은 “현재 베트남 슈퍼캡 공장 증설 진행 중이며 ..."
+        }
+      ],
+      "themes": [
+        "2차전지",
+        "연료전지"
+      ]
+    }
+  ],
+  "by_grade": {
+    "A": 2,
+    "B": 1
+  },
+  "by_market": {
+    "KOSDAQ": 3
+  },
+  "processing_time_ms": 1321629.188299179,
+  "updated_at": "2026-05-24T09:52:28"
+}

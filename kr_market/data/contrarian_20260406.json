@@ -1,0 +1,143 @@
+{
+  "date": "2026-04-06",
+  "signals": [
+    {
+      "ticker": "084180",
+      "name": "수성웹툰",
+      "market": "KOSDAQ",
+      "score": 8,
+      "oversold_score": 46.8,
+      "reversal_probability": 0.84,
+      "support_level": 1010.0,
+      "signal_date": "2026-04-06",
+      "rsi": 21.3,
+      "price": 1022.0,
+      "change_pct": -13.48
+    },
+    {
+      "ticker": "468530",
+      "name": "프로티나",
+      "market": "KOSDAQ",
+      "score": 7,
+      "oversold_score": 13.0,
+      "reversal_probability": 0.73,
+      "support_level": 58000.0,
+      "signal_date": "2026-04-06",
+      "rsi": 34.8,
+      "price": 58600.0,
+      "change_pct": -7.87
+    },
+    {
+      "ticker": "0011A0",
+      "name": "액스비스",
+      "market": "KOSDAQ",
+      "score": 7,
+      "oversold_score": 31.5,
+      "reversal_probability": 0.71,
+      "support_level": 22150.0,
+      "signal_date": "2026-04-06",
+      "rsi": 27.4,
+      "price": 23400.0,
+      "change_pct": -7.13
+    },
+    {
+      "ticker": "466100",
+      "name": "클로봇",
+      "market": "KOSDAQ",
+      "score": 7,
+      "oversold_score": 23.0,
+      "reversal_probability": 0.68,
+      "support_level": 41000.0,
+      "signal_date": "2026-04-06",
+      "rsi": 30.8,
+      "price": 41550.0,
+      "change_pct": -19.32
+    },
+    {
+      "ticker": "0000Z0",
+      "name": "RISE 바이오TOP10액티브",
+      "market": "KOSPI",
+      "score": 6,
+      "oversold_score": 7.0,
+      "reversal_probability": 0.63,
+      "support_level": 14685.0,
+      "signal_date": "2026-04-06",
+      "rsi": 37.2,
+      "price": 14715.0,
+      "change_pct": -4.45
+    },
+    {
+      "ticker": "009970",
+      "name": "영원무역홀딩스",
+      "market": "KOSPI",
+      "score": 6,
+      "oversold_score": 2.2,
+      "reversal_probability": 0.63,
+      "support_level": 199900.0,
+      "signal_date": "2026-04-06",
+      "rsi": 39.1,
+      "price": 201000.0,
+      "change_pct": -4.04
+    },
+    {
+      "ticker": "478340",
+      "name": "나라스페이스테크놀로지",
+      "market": "KOSDAQ",
+      "score": 6,
+      "oversold_score": 10.3,
+      "reversal_probability": 0.58,
+      "support_level": 32400.0,
+      "signal_date": "2026-04-06",
+      "rsi": 35.9,
+      "price": 33150.0,
+      "change_pct": -14.25
+    },
+    {
+      "ticker": "174900",
+      "name": "앱클론",
+      "market": "KOSDAQ",
+      "score": 6,
+      "oversold_score": 9.3,
+      "reversal_probability": 0.58,
+      "support_level": 49500.0,
+      "signal_date": "2026-04-06",
+      "rsi": 36.3,
+      "price": 50200.0,
+      "change_pct": -10.83
+    },
+    {
+      "ticker": "214370",
+      "name": "케어젠",
+      "market": "KOSDAQ",
+      "score": 5,
+      "oversold_score": 2.5,
+      "reversal_probability": 0.48,
+      "support_level": 86600.0,
+      "signal_date": "2026-04-06",
+      "rsi": 39.0,
+      "price": 89800.0,
+      "change_pct": -16.47
+    },
+    {
+      "ticker": "338840",
+      "name": "와이바이오로직스",
+      "market": "KOSDAQ",
+      "score": 5,
+      "oversold_score": 0.5,
+      "reversal_probability": 0.48,
+      "support_level": 22950.0,
+      "signal_date": "2026-04-06",
+      "rsi": 39.8,
+      "price": 25050.0,
+      "change_pct": -11.19
+    }
+  ],
+  "stats": {
+    "total": 10,
+    "avg_score": 6.3,
+    "high_prob": 3,
+    "avg_oversold": 14.6
+  },
+  "processing_time_s": 338.1,
+  "updated_at": "2026-04-06T12:18:31.269516"
+}

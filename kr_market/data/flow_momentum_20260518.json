@@ -1,0 +1,33 @@
+{
+  "date": "2026-05-18",
+  "signals": [
+    {
+      "ticker": "456040",
+      "name": "OCI",
+      "market": "KOSPI",
+      "score": 6,
+      "flow_score": 3,
+      "trend_score": 1,
+      "vol_score": 2,
+      "foreign_flow": 29.4,
+      "institution_flow": 63.0,
+      "volume_ratio": 4.57,
+      "signal_strength": "moderate",
+      "signal_date": "2026-05-18",
+      "price": 124500.0,
+      "change_pct": 13.01,
+      "ma20": 131545,
+      "ma60": 104007.0,
+      "trend": "above_ma60"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "avg_score": 6.0,
+    "strong": 0,
+    "moderate": 1,
+    "weak": 0
+  },
+  "processing_time_s": 12.1,
+  "updated_at": "2026-05-19T08:30:54.494677"
+}

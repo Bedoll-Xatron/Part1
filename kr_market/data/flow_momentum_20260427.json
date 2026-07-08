@@ -1,0 +1,52 @@
+{
+  "date": "2026-04-27",
+  "signals": [
+    {
+      "ticker": "010140",
+      "name": "삼성중공업",
+      "market": "KOSPI",
+      "score": 10,
+      "flow_score": 5,
+      "trend_score": 3,
+      "vol_score": 2,
+      "foreign_flow": 344.8,
+      "institution_flow": 1327.0,
+      "volume_ratio": 4.61,
+      "signal_strength": "strong",
+      "signal_date": "2026-04-27",
+      "price": 34400.0,
+      "change_pct": 6.92,
+      "ma20": 28988,
+      "ma60": 28437.0,
+      "trend": "above_both"
+    },
+    {
+      "ticker": "456040",
+      "name": "OCI",
+      "market": "KOSPI",
+      "score": 6,
+      "flow_score": 1,
+      "trend_score": 3,
+      "vol_score": 2,
+      "foreign_flow": -5.4,
+      "institution_flow": 41.8,
+      "volume_ratio": 5.61,
+      "signal_strength": "weak",
+      "signal_date": "2026-04-27",
+      "price": 145500.0,
+      "change_pct": 13.01,
+      "ma20": 103015,
+      "ma60": 90585.0,
+      "trend": "above_both"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "avg_score": 8.0,
+    "strong": 1,
+    "moderate": 0,
+    "weak": 1
+  },
+  "processing_time_s": 11.7,
+  "updated_at": "2026-04-27T08:37:19.972370"
+}

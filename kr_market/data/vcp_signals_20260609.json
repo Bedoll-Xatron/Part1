@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-09",
+  "total_scanned": 50,
+  "vcp_detected": 1,
+  "signals": [
+    {
+      "code": "010120",
+      "name": "LS ELECTRIC",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 48,
+      "c1": 77.97,
+      "c2": 30.9,
+      "c3": 20.79,
+      "r12": 2.52,
+      "r23": 1.49,
+      "pivot_high": 291000.0,
+      "foreign_5d": -173126,
+      "inst_5d": -176884
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-06-22",
+  "signals": [],
+  "stats": {
+    "total": 0,
+    "avg_score": 0.0,
+    "top_theme": "--",
+    "avg_sentiment": 0.0,
+    "theme_map": {}
+  },
+  "processing_time_s": 2.6,
+  "updated_at": "2026-06-23T08:30:48.932382"
+}

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"http://127.0.0.1:5001/api/kr/jongga-v2/cumulative?page=1&per_page=9999\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''keys:'''', list\\(d.keys\\(\\)\\)\\); print\\(''''signals:'''', len\\(d.get\\(''''signals'''',[]\\)\\)\\); print\\(''''stats:'''', d.get\\(''''stats'''',{}\\)\\)\")",
+      "Bash(python:*)",
+      "Bash(curl:*)",
+      "Bash(tasklist)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('D:/INFORUN/HoDoo/Part7/kr_market/data/vcp_signals_20260406.json'\\)\\); print\\(list\\(d.keys\\(\\)\\)\\); sigs=d.get\\('signals',[]\\); print\\(len\\(sigs\\),'signals'\\); print\\(list\\(sigs[0].keys\\(\\)\\) if sigs else 'empty'\\)\")",
+      "Bash(npx tsc:*)",
+      "Bash(xargs grep:*)",
+      "Bash(pip show:*)",
+      "Bash(python -X utf8 backtest.py)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(Remove-Item \"D:\\\\INFORUN\\\\HoDoo\\\\Part7\\\\kr_market\\\\engine\\\\afternoon_scanner.py\", \"D:\\\\INFORUN\\\\HoDoo\\\\Part7\\\\kr_market\\\\engine\\\\run_afternoon.py\", \"D:\\\\INFORUN\\\\HoDoo\\\\Part7\\\\kr_market\\\\engine\\\\supabase_sync.py\", \"D:\\\\INFORUN\\\\HoDoo\\\\Part7\\\\kr_market\\\\engine\\\\base_runner.py\" -Force)",
+      "Bash(Write-Output \"삭제 완료\")",
+      "PowerShell(Start-Sleep 3; Invoke-RestMethod -Uri \"http://127.0.0.1:5010/api/kr/jongga-v2/latest\" -Method GET -TimeoutSec 10 | ConvertTo-Json -Depth 3 | Select-Object -First 50)",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoProfile -Command `\"cd D:\\\\INFORUN\\\\HoDoo\\\\Part7\\\\frontend; npm run dev`\"\" -WindowStyle Normal)",
+      "PowerShell(Start-Sleep 8; Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 10 -UseBasicParsing | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Invoke-RestMethod -Uri \"http://127.0.0.1:5010/api/kr/jongga-v2/dates\" -TimeoutSec 10 | ConvertTo-Json -Depth 3)"
+    ]
+  }
+}

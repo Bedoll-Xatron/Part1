@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-20",
+  "signals": [
+    {
+      "ticker": "001250",
+      "name": "GS글로벌",
+      "market": "KOSPI",
+      "score": 10,
+      "sector": "기타",
+      "rotation_phase": "markup",
+      "relative_strength": 83.8,
+      "signal_date": "2026-04-06",
+      "price": 3250.0,
+      "ma20": 3091,
+      "ma60": 2681.0,
+      "rs_raw": 10.13
+    },
+    {
+      "ticker": "489790",
+      "name": "한화비전",
+      "market": "KOSPI",
+      "score": 0,
+      "sector": "반도체/전자",
+      "rotation_phase": "markup",
+      "relative_strength": 0.0,
+      "signal_date": "2026-03-25",
+      "price": 79300.0,
+      "ma20": 77075,
+      "ma60": 71783.0,
+      "rs_raw": -17.2
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "avg_score": 5.0,
+    "sector_count": 2,
+    "avg_rs": 41.9
+  },
+  "processing_time_s": 11.4,
+  "updated_at": "2026-04-20T08:40:18.004831"
+}

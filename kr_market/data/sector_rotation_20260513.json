@@ -1,0 +1,69 @@
+{
+  "date": "2026-05-13",
+  "signals": [
+    {
+      "ticker": "456040",
+      "name": "OCI",
+      "market": "KOSPI",
+      "score": 7,
+      "sector": "반도체/전자",
+      "rotation_phase": "markup",
+      "relative_strength": 60.4,
+      "signal_date": "2026-04-23",
+      "price": 130600.0,
+      "ma20": 125395,
+      "ma60": 101197.0,
+      "rs_raw": 3.12
+    },
+    {
+      "ticker": "010140",
+      "name": "삼성중공업",
+      "market": "KOSPI",
+      "score": 0,
+      "sector": "방산/항공우주",
+      "rotation_phase": "accumulation",
+      "relative_strength": 0.0,
+      "signal_date": "2026-04-23",
+      "price": 30800.0,
+      "ma20": 31538,
+      "ma60": 29062.0,
+      "rs_raw": -25.57
+    },
+    {
+      "ticker": "001250",
+      "name": "GS글로벌",
+      "market": "KOSPI",
+      "score": 0,
+      "sector": "기타",
+      "rotation_phase": "accumulation",
+      "relative_strength": 0.0,
+      "signal_date": "2026-04-06",
+      "price": 4030.0,
+      "ma20": 4189,
+      "ma60": 3218.0,
+      "rs_raw": -21.19
+    },
+    {
+      "ticker": "489790",
+      "name": "한화비전",
+      "market": "KOSPI",
+      "score": 0,
+      "sector": "반도체/전자",
+      "rotation_phase": "accumulation",
+      "relative_strength": 0.0,
+      "signal_date": "2026-03-25",
+      "price": 81000.0,
+      "ma20": 82790,
+      "ma60": 78128.0,
+      "rs_raw": -29.45
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "avg_score": 1.8,
+    "sector_count": 3,
+    "avg_rs": 15.1
+  },
+  "processing_time_s": 21.6,
+  "updated_at": "2026-05-13T12:00:48.765494"
+}

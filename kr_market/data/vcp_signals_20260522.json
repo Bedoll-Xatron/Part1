@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-22",
+  "total_scanned": 50,
+  "vcp_detected": 1,
+  "signals": [
+    {
+      "code": "000810",
+      "name": "삼성화재",
+      "market": "KOSPI",
+      "grade": "B",
+      "score": 42,
+      "c1": 16.53,
+      "c2": 12.43,
+      "c3": 5.67,
+      "r12": 1.33,
+      "r23": 2.19,
+      "pivot_high": 485000.0,
+      "foreign_5d": 34919,
+      "inst_5d": 10255
+    }
+  ]
+}

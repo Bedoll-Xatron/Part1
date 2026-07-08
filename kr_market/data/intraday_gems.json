@@ -1,0 +1,51 @@
+{
+  "last_updated": "2026-07-03 09:52:30",
+  "count": 5,
+  "gems": [
+    {
+      "ticker": "002780",
+      "name": "진흥기업",
+      "price": 1236.0,
+      "change_pct": 8.23,
+      "volume_ratio": 10.9,
+      "above_ma60": true,
+      "scan_time": "2026-07-03 09:52:20"
+    },
+    {
+      "ticker": "301300",
+      "name": "바이브컴퍼니",
+      "price": 1660.0,
+      "change_pct": 10.67,
+      "volume_ratio": 7.6,
+      "above_ma60": false,
+      "scan_time": "2026-07-03 09:52:27"
+    },
+    {
+      "ticker": "377220",
+      "name": "프롬바이오",
+      "price": 812.0,
+      "change_pct": 13.57,
+      "volume_ratio": 5.6,
+      "above_ma60": false,
+      "scan_time": "2026-07-03 09:52:23"
+    },
+    {
+      "ticker": "419050",
+      "name": "삼기에너지솔루션즈",
+      "price": 2230.0,
+      "change_pct": 14.71,
+      "volume_ratio": 3.4,
+      "above_ma60": true,
+      "scan_time": "2026-07-03 09:52:21"
+    },
+    {
+      "ticker": "121440",
+      "name": "골프존홀딩스",
+      "price": 6640.0,
+      "change_pct": 0.15,
+      "volume_ratio": 2.2,
+      "above_ma60": true,
+      "scan_time": "2026-07-03 09:52:28"
+    }
+  ]
+}

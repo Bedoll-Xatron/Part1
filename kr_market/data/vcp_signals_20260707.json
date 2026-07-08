@@ -1,0 +1,82 @@
+{
+  "date": "2026-07-07",
+  "total_scanned": 50,
+  "vcp_detected": 5,
+  "signals": [
+    {
+      "code": "360750",
+      "name": "TIGER 미국S&P500",
+      "market": "KOSPI",
+      "grade": "B",
+      "score": 68,
+      "c1": 5.67,
+      "c2": 2.73,
+      "c3": 2.09,
+      "r12": 2.08,
+      "r23": 1.31,
+      "pivot_high": 29000.0,
+      "foreign_5d": -1526345,
+      "inst_5d": -3502016
+    },
+    {
+      "code": "006400",
+      "name": "삼성SDI",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 32,
+      "c1": 34.02,
+      "c2": 24.05,
+      "c3": 16.54,
+      "r12": 1.41,
+      "r23": 1.45,
+      "pivot_high": 514000.0,
+      "foreign_5d": -33296,
+      "inst_5d": -20922
+    },
+    {
+      "code": "267260",
+      "name": "HD현대일렉트릭",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 30,
+      "c1": 31.44,
+      "c2": 29.93,
+      "c3": 19.19,
+      "r12": 1.05,
+      "r23": 1.56,
+      "pivot_high": 1084000.0,
+      "foreign_5d": -121172,
+      "inst_5d": 62296
+    },
+    {
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 22,
+      "c1": 26.23,
+      "c2": 24.0,
+      "c3": 19.35,
+      "r12": 1.09,
+      "r23": 1.24,
+      "pivot_high": 400500.0,
+      "foreign_5d": 108080,
+      "inst_5d": -233733
+    },
+    {
+      "code": "010120",
+      "name": "LS ELECTRIC",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 18,
+      "c1": 32.1,
+      "c2": 28.93,
+      "c3": 26.59,
+      "r12": 1.11,
+      "r23": 1.09,
+      "pivot_high": 270000.0,
+      "foreign_5d": -874004,
+      "inst_5d": 211731
+    }
+  ]
+}

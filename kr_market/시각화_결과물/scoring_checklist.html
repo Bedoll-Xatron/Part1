@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>스코어링 체크리스트 — 2026-02-23</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px;
+    gap: 40px;
+  }
+
+  .date-header {
+    font-size: 14px; color: #555; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: -20px;
+  }
+
+  .card {
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 24px;
+    padding: 44px 52px 40px;
+    max-width: 780px;
+    width: 100%;
+  }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #222;
+  }
+  .header h1 { font-size: 24px; font-weight: 800; }
+  .header .code { font-size: 13px; color: #666; }
+  .grade {
+    width: 64px; height: 64px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; font-weight: 900;
+    color: #0a0a0a; box-shadow: 0 0 20px rgba(52,211,153,0.25);
+  }
+
+  .summary { display: flex; gap: 14px; margin-bottom: 32px; }
+  .sum-box {
+    flex: 1; background: #1a1a1a; border: 1px solid #2a2a2a;
+    border-radius: 14px; padding: 16px 20px; text-align: center;
+  }
+  .sum-box .lbl { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .sum-box .val { font-size: 26px; font-weight: 800; }
+  .sum-box .val span { font-size: 14px; color: #555; }
+  .sum-box .sub { font-size: 11px; color: #555; margin-top: 2px; }
+
+  .section-title {
+    font-size: 13px; font-weight: 700; color: #666;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+  }
+  .row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .row-label { width: 80px; font-size: 13px; color: #ccc; font-weight: 600; text-align: right; flex-shrink: 0; }
+  .bar-track {
+    flex: 1; height: 30px; background: #1a1a1a; border-radius: 8px;
+    overflow: hidden; position: relative;
+  }
+  .bar-fill {
+    height: 100%; border-radius: 8px;
+    display: flex; align-items: center; padding-left: 10px;
+    font-size: 11px; font-weight: 700; color: #0a0a0a;
+  }
+  .row-pts { width: 38px; font-size: 13px; font-weight: 800; text-align: center; flex-shrink: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 8px 92px; }
+  .tag {
+    font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 10px;
+    display: inline-flex; align-items: center; gap: 3px;
+  }
+  .tg { background: #052e16; color: #34d399; }
+  .ty { background: #1a1508; color: #fbbf24; }
+  .tr { background: #1a0a0a; color: #f87171; }
+  .tb { background: #0c1a3a; color: #60a5fa; }
+  .tx { background: #1a1a1a; color: #555; }
+
+  .cl-card {
+    background: #141414; border: 1px solid #222; border-radius: 24px;
+    padding: 44px 52px 40px; max-width: 780px; width: 100%;
+  }
+  .cl-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 24px; }
+  .cl-group {
+    font-size: 11px; font-weight: 700; color: #666;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 18px 0 10px; padding-top: 14px; border-top: 1px solid #1a1a1a;
+  }
+  .cl-group:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+  .cl-item { display: flex; align-items: center; gap: 12px; padding: 7px 0; font-size: 14px; }
+  .cl-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; flex-shrink: 0;
+  }
+  .ci-pass { background: #052e16; color: #34d399; }
+  .ci-fail { background: #1a1a1a; color: #444; }
+  .ci-warn { background: #1a0a0a; color: #f87171; }
+  .cl-text { color: #888; }
+  .cl-text.on { color: #e0e0e0; }
+  .cl-detail { font-size: 12px; color: #555; margin-left: 36px; padding-bottom: 2px; }
+
+  .insight {
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
+    padding: 20px 24px; margin-top: 24px; display: flex; gap: 14px;
+  }
+  .insight-icon { font-size: 20px; flex-shrink: 0; }
+  .insight p { font-size: 13px; color: #999; line-height: 1.7; }
+  .hl-g { color: #34d399; font-weight: 700; }
+  .hl-y { color: #fbbf24; font-weight: 700; }
+  .hl-r { color: #f87171; font-weight: 700; }
+  .hl-a { color: #34d399; font-weight: 700; }
+  .hl-b { color: #fbbf24; font-weight: 700; }
+  .hl-c { color: #f87171; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="date-header">📊 스코어링 결과 — 2026-02-23</div>
+
+<div class="card">
+  <div class="header">
+    <div>
+      <h1>보로노이</h1>
+      <span class="code">310210 · KOSDAQ · +19.3%</span>
+    </div>
+    <div class="grade" style="background:linear-gradient(135deg, #7f1d1d, #f87171);color:#0a0a0a;">C</div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-box">
+      <div class="lbl">총점</div>
+      <div class="val" style="color:#f87171;">6<span>/15</span></div>
+      <div class="sub">C등급 (6점 이하)</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">품질 점수</div>
+      <div class="val" style="color:#60a5fa;">40<span>/100</span></div>
+      <div class="sub">보통</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">필수 조건</div>
+      <div class="val" style="color:#f87171;">FAIL</div>
+      <div class="sub">뉴스 + 거래대금</div>
+    </div>
+  </div>
+
+  <div class="section-title">점수 상세</div>
+  <div class="row">
+    <div class="row-label">뉴스/재료</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">Keyword analysis</span></div>
+  <div class="row">
+    <div class="row-label">거래대금</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">682억</span></div>
+  <div class="row">
+    <div class="row-label">차트 패턴</div>
+    <div class="bar-track"><div class="bar-fill" style="width:66.7%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">2/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">정배열</span><span class="tag tg">신고가 근접</span></div>
+  <div class="row">
+    <div class="row-label">캔들 형태</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">1/1</div>
+  </div>
+  <div class="tags"><span class="tag tg">좋은 캔들</span><span class="tag tg">윗꼬리 짧음</span></div>
+  <div class="row">
+    <div class="row-label">기간 조정</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="row">
+    <div class="row-label">수급</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">2/2</div>
+  </div>
+  <div class="tags"><span class="tag tg">외국인 순매수</span><span class="tag tg">기관 순매수</span><span class="tag tb">쌍매수</span></div>
+  <div class="row">
+    <div class="row-label">보너스</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/2</div>
+  </div>
+  <div class="tags"><span class="tag tx">조정폭 회복 —</span><span class="tag tx">되돌림 지지 —</span></div>
+</div>
+
+<div class="cl-card">
+  <h2>완료 점검 체크리스트 — 보로노이</h2>
+<div class="cl-group">필수 조건 (미통과 시 자동 C등급)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">뉴스/재료 확인됨</span></div>
+<div class="cl-detail">Keyword analysis — 1/3점</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">거래대금 충족</span></div>
+<div class="cl-detail">682억 (기준: 500억 이상) — 0/3점</div>
+<div class="cl-group">기술적 분석</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">이평선 정배열 (close &gt; MA5 &gt; MA10 &gt; MA20)</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">52주 신고가 근접 (현재가 ≥ 고가의 95%)</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">좋은 캔들 — 장대양봉, body 비율 높음</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">윗꼬리 짧음 — 매도 압력 낮음</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-group">수급</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">외국인 5일 순매수 +96,991</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">기관 5일 순매수 +26,103</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">쌍매수 확인 — 수급 2/2점</span></div>
+<div class="cl-group">보너스 패턴</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파 패턴</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">조정폭 50% 회복</span></div>
+<div class="cl-detail">최근 10일 내 3% 이상 조정 후 반등 패턴 없음</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">되돌림 지지 확인</span></div>
+<div class="cl-detail">돌파 후 이전 저항선에서 지지 패턴 없음</div>
+<div class="cl-group">부정적 조건</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">부정적 뉴스 없음</span></div>
+<div class="cl-group">품질 점수 산출 내역 (40/100)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">수급 — 쌍매수 +30점</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">총점 6점 — +0점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">당일 상승률 +19.3% — +5점</span></div>
+<div class="cl-detail">5% 이내면 +20점 가능</div>
+
+  <div class="insight">
+    <div class="insight-icon">💡</div>
+    <div>
+      <p>
+        총점 <span class="hl-g">6/15</span>으로 <span class="hl-r">C등급</span> 달성.
+        필수 조건(뉴스+거래대금) <span class="hl-r">미통과</span>.<br>
+        품질 점수 <span class="hl-y">40점</span>은 보통.<br>
+        <span class="hl-r">미충족 3개</span>: 기간조정, 조정폭 회복, 되돌림 지지
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <div>
+      <h1>오름테라퓨틱</h1>
+      <span class="code">475830 · KOSDAQ · +19.1%</span>
+    </div>
+    <div class="grade" style="background:linear-gradient(135deg, #7f1d1d, #f87171);color:#0a0a0a;">C</div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-box">
+      <div class="lbl">총점</div>
+      <div class="val" style="color:#f87171;">4<span>/15</span></div>
+      <div class="sub">C등급 (6점 이하)</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">품질 점수</div>
+      <div class="val" style="color:#60a5fa;">35<span>/100</span></div>
+      <div class="sub">미흡</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">필수 조건</div>
+      <div class="val" style="color:#f87171;">FAIL</div>
+      <div class="sub">뉴스 + 거래대금</div>
+    </div>
+  </div>
+
+  <div class="section-title">점수 상세</div>
+  <div class="row">
+    <div class="row-label">뉴스/재료</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">제공된 뉴스에 오름테라퓨틱에 대한 직접적인 언급이 없어 개별 종목에 미치</span></div>
+  <div class="row">
+    <div class="row-label">거래대금</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">959억</span></div>
+  <div class="row">
+    <div class="row-label">차트 패턴</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">정배열</span><span class="tag tx">신고가 —</span></div>
+  <div class="row">
+    <div class="row-label">캔들 형태</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">1/1</div>
+  </div>
+  <div class="tags"><span class="tag tg">좋은 캔들</span><span class="tag tg">윗꼬리 짧음</span></div>
+  <div class="row">
+    <div class="row-label">기간 조정</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="row">
+    <div class="row-label">수급</div>
+    <div class="bar-track"><div class="bar-fill" style="width:50.0%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">1/2</div>
+  </div>
+  <div class="tags"><span class="tag tg">외국인 순매수</span><span class="tag tr">기관 순매도</span></div>
+  <div class="row">
+    <div class="row-label">보너스</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/2</div>
+  </div>
+  <div class="tags"><span class="tag tx">조정폭 회복 —</span><span class="tag tx">되돌림 지지 —</span></div>
+</div>
+
+<div class="cl-card">
+  <h2>완료 점검 체크리스트 — 오름테라퓨틱</h2>
+<div class="cl-group">필수 조건 (미통과 시 자동 C등급)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">뉴스/재료 확인됨</span></div>
+<div class="cl-detail">제공된 뉴스에 오름테라퓨틱에 대한 직접적인 언급이 없어 개별 종목에 미치는 영향은 중립적입 — 1/3점</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">거래대금 충족</span></div>
+<div class="cl-detail">959억 (기준: 500억 이상) — 0/3점</div>
+<div class="cl-group">기술적 분석</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">이평선 정배열 (close &gt; MA5 &gt; MA10 &gt; MA20)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">52주 신고가 근접 (현재가 ≥ 고가의 95%)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">60일 고가 돌파</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">좋은 캔들 — 장대양봉, body 비율 높음</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">윗꼬리 짧음 — 매도 압력 낮음</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-group">수급</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">외국인 5일 순매수 +320,931</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기관 5일 순매수 -297,479</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">한쪽 매수 확인 — 수급 1/2점</span></div>
+<div class="cl-group">보너스 패턴</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파 패턴</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">조정폭 50% 회복</span></div>
+<div class="cl-detail">최근 10일 내 3% 이상 조정 후 반등 패턴 없음</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">되돌림 지지 확인</span></div>
+<div class="cl-detail">돌파 후 이전 저항선에서 지지 패턴 없음</div>
+<div class="cl-group">부정적 조건</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">부정적 뉴스 없음</span></div>
+<div class="cl-group">품질 점수 산출 내역 (35/100)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">수급 — 한쪽 매수 +15점</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">총점 4점 — +0점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">당일 상승률 +19.1% — +5점</span></div>
+<div class="cl-detail">5% 이내면 +20점 가능</div>
+
+  <div class="insight">
+    <div class="insight-icon">💡</div>
+    <div>
+      <p>
+        총점 <span class="hl-g">4/15</span>으로 <span class="hl-r">C등급</span> 달성.
+        필수 조건(뉴스+거래대금) <span class="hl-r">미통과</span>.<br>
+        품질 점수 <span class="hl-r">35점</span>은 미흡.<br>
+        <span class="hl-r">미충족 4개</span>: 기간조정, 조정폭 회복, 되돌림 지지, 신고가/돌파
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <div>
+      <h1>대한광통신</h1>
+      <span class="code">010170 · KOSDAQ · +15.8%</span>
+    </div>
+    <div class="grade" style="background:linear-gradient(135deg, #78350f, #fbbf24);color:#0a0a0a;">B</div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-box">
+      <div class="lbl">총점</div>
+      <div class="val" style="color:#fbbf24;">7<span>/15</span></div>
+      <div class="sub">B등급 (7~8점)</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">품질 점수</div>
+      <div class="val" style="color:#60a5fa;">55<span>/100</span></div>
+      <div class="sub">보통</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">필수 조건</div>
+      <div class="val" style="color:#34d399;">PASS</div>
+      <div class="sub">뉴스 + 거래대금</div>
+    </div>
+  </div>
+
+  <div class="section-title">점수 상세</div>
+  <div class="row">
+    <div class="row-label">뉴스/재료</div>
+    <div class="bar-track"><div class="bar-fill" style="width:66.7%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">2/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">유상증자 최종발행가액 결정 소식과 함께 코스닥 거래량 1위를 기록하며 주</span></div>
+  <div class="row">
+    <div class="row-label">거래대금</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">2,661억</span></div>
+  <div class="row">
+    <div class="row-label">차트 패턴</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">정배열</span><span class="tag tx">신고가 —</span></div>
+  <div class="row">
+    <div class="row-label">캔들 형태</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">1/1</div>
+  </div>
+  <div class="tags"><span class="tag tg">좋은 캔들</span><span class="tag tg">윗꼬리 짧음</span></div>
+  <div class="row">
+    <div class="row-label">기간 조정</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="row">
+    <div class="row-label">수급</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">2/2</div>
+  </div>
+  <div class="tags"><span class="tag tg">외국인 순매수</span><span class="tag tg">기관 순매수</span><span class="tag tb">쌍매수</span></div>
+  <div class="row">
+    <div class="row-label">보너스</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/2</div>
+  </div>
+  <div class="tags"><span class="tag tx">조정폭 회복 —</span><span class="tag tx">되돌림 지지 —</span></div>
+</div>
+
+<div class="cl-card">
+  <h2>완료 점검 체크리스트 — 대한광통신</h2>
+<div class="cl-group">필수 조건 (미통과 시 자동 C등급)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">뉴스/재료 확인됨</span></div>
+<div class="cl-detail">유상증자 최종발행가액 결정 소식과 함께 코스닥 거래량 1위를 기록하며 주가가 18%대 급등 — 2/3점</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">거래대금 충족</span></div>
+<div class="cl-detail">2,661억 (기준: 500억 이상) — 1/3점</div>
+<div class="cl-group">기술적 분석</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">이평선 정배열 (close &gt; MA5 &gt; MA10 &gt; MA20)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">52주 신고가 근접 (현재가 ≥ 고가의 95%)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">60일 고가 돌파</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">좋은 캔들 — 장대양봉, body 비율 높음</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">윗꼬리 짧음 — 매도 압력 낮음</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-group">수급</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">외국인 5일 순매수 +2,101,590</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">기관 5일 순매수 +283,580</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">쌍매수 확인 — 수급 2/2점</span></div>
+<div class="cl-group">보너스 패턴</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파 패턴</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">조정폭 50% 회복</span></div>
+<div class="cl-detail">최근 10일 내 3% 이상 조정 후 반등 패턴 없음</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">되돌림 지지 확인</span></div>
+<div class="cl-detail">돌파 후 이전 저항선에서 지지 패턴 없음</div>
+<div class="cl-group">부정적 조건</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">부정적 뉴스 없음</span></div>
+<div class="cl-group">품질 점수 산출 내역 (55/100)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">수급 — 쌍매수 +30점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">총점 7점 — +10점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">당일 상승률 +15.8% — +5점</span></div>
+<div class="cl-detail">5% 이내면 +20점 가능</div>
+
+  <div class="insight">
+    <div class="insight-icon">💡</div>
+    <div>
+      <p>
+        총점 <span class="hl-g">7/15</span>으로 <span class="hl-y">B등급</span> 달성.
+        필수 조건(뉴스+거래대금) 모두 통과.<br>
+        품질 점수 <span class="hl-y">55점</span>은 보통.<br>
+        <span class="hl-r">미충족 4개</span>: 기간조정, 조정폭 회복, 되돌림 지지, 신고가/돌파
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <div>
+      <h1>흥구석유</h1>
+      <span class="code">024060 · KOSDAQ · +14.8%</span>
+    </div>
+    <div class="grade" style="background:linear-gradient(135deg, #78350f, #fbbf24);color:#0a0a0a;">B</div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-box">
+      <div class="lbl">총점</div>
+      <div class="val" style="color:#fbbf24;">7<span>/15</span></div>
+      <div class="sub">B등급 (7~8점)</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">품질 점수</div>
+      <div class="val" style="color:#60a5fa;">40<span>/100</span></div>
+      <div class="sub">보통</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">필수 조건</div>
+      <div class="val" style="color:#34d399;">PASS</div>
+      <div class="sub">뉴스 + 거래대금</div>
+    </div>
+  </div>
+
+  <div class="section-title">점수 상세</div>
+  <div class="row">
+    <div class="row-label">뉴스/재료</div>
+    <div class="bar-track"><div class="bar-fill" style="width:66.7%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">2/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">국제 유가 상승에 따른 정유주 동반 랠리로 테마 상승 모멘텀 부각</span><span class="tag tb">정유</span><span class="tag tb">에너지</span></div>
+  <div class="row">
+    <div class="row-label">거래대금</div>
+    <div class="bar-track"><div class="bar-fill" style="width:66.7%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">2/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">8,988억</span></div>
+  <div class="row">
+    <div class="row-label">차트 패턴</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">정배열</span><span class="tag tx">신고가 —</span></div>
+  <div class="row">
+    <div class="row-label">캔들 형태</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,#065f46,#34d399);"></div></div>
+    <div class="row-pts" style="color:#34d399;">1/1</div>
+  </div>
+  <div class="tags"><span class="tag tg">좋은 캔들</span><span class="tag tg">윗꼬리 짧음</span></div>
+  <div class="row">
+    <div class="row-label">기간 조정</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="row">
+    <div class="row-label">수급</div>
+    <div class="bar-track"><div class="bar-fill" style="width:50.0%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">1/2</div>
+  </div>
+  <div class="tags"><span class="tag tg">외국인 순매수</span><span class="tag tr">기관 순매도</span></div>
+  <div class="row">
+    <div class="row-label">보너스</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/2</div>
+  </div>
+  <div class="tags"><span class="tag tx">조정폭 회복 —</span><span class="tag tx">되돌림 지지 —</span></div>
+</div>
+
+<div class="cl-card">
+  <h2>완료 점검 체크리스트 — 흥구석유</h2>
+<div class="cl-group">필수 조건 (미통과 시 자동 C등급)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">뉴스/재료 확인됨</span></div>
+<div class="cl-detail">국제 유가 상승에 따른 정유주 동반 랠리로 테마 상승 모멘텀 부각 — 2/3점</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">거래대금 충족</span></div>
+<div class="cl-detail">8,988억 (기준: 500억 이상) — 2/3점</div>
+<div class="cl-group">기술적 분석</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">이평선 정배열 (close &gt; MA5 &gt; MA10 &gt; MA20)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">52주 신고가 근접 (현재가 ≥ 고가의 95%)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">60일 고가 돌파</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">좋은 캔들 — 장대양봉, body 비율 높음</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">윗꼬리 짧음 — 매도 압력 낮음</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-group">수급</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">외국인 5일 순매수 +50,640</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기관 5일 순매수 -4,073</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">한쪽 매수 확인 — 수급 1/2점</span></div>
+<div class="cl-group">보너스 패턴</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파 패턴</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">조정폭 50% 회복</span></div>
+<div class="cl-detail">최근 10일 내 3% 이상 조정 후 반등 패턴 없음</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">되돌림 지지 확인</span></div>
+<div class="cl-detail">돌파 후 이전 저항선에서 지지 패턴 없음</div>
+<div class="cl-group">부정적 조건</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">부정적 뉴스 없음</span></div>
+<div class="cl-group">품질 점수 산출 내역 (40/100)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">수급 — 한쪽 매수 +15점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">총점 7점 — +10점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">당일 상승률 +14.8% — +10점</span></div>
+<div class="cl-detail">5% 이내면 +20점 가능</div>
+
+  <div class="insight">
+    <div class="insight-icon">💡</div>
+    <div>
+      <p>
+        총점 <span class="hl-g">7/15</span>으로 <span class="hl-y">B등급</span> 달성.
+        필수 조건(뉴스+거래대금) 모두 통과.<br>
+        품질 점수 <span class="hl-y">40점</span>은 보통.<br>
+        <span class="hl-r">미충족 4개</span>: 기간조정, 조정폭 회복, 되돌림 지지, 신고가/돌파
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <div>
+      <h1>흥국화재</h1>
+      <span class="code">000540 · KOSPI · +14.4%</span>
+    </div>
+    <div class="grade" style="background:linear-gradient(135deg, #7f1d1d, #f87171);color:#0a0a0a;">C</div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-box">
+      <div class="lbl">총점</div>
+      <div class="val" style="color:#f87171;">5<span>/15</span></div>
+      <div class="sub">C등급 (6점 이하)</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">품질 점수</div>
+      <div class="val" style="color:#60a5fa;">25<span>/100</span></div>
+      <div class="sub">미흡</div>
+    </div>
+    <div class="sum-box">
+      <div class="lbl">필수 조건</div>
+      <div class="val" style="color:#34d399;">PASS</div>
+      <div class="sub">뉴스 + 거래대금</div>
+    </div>
+  </div>
+
+  <div class="section-title">점수 상세</div>
+  <div class="row">
+    <div class="row-label">뉴스/재료</div>
+    <div class="bar-track"><div class="bar-fill" style="width:66.7%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">2/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">3차 상법 개정안(자사주 소각 의무화) 통과 기대감으로 보험주 전반이 강</span><span class="tag tb">보험</span><span class="tag tb">주주환원</span></div>
+  <div class="row">
+    <div class="row-label">거래대금</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">1,283억</span></div>
+  <div class="row">
+    <div class="row-label">차트 패턴</div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.3%;background:linear-gradient(90deg,#7f1d1d,#f87171);"></div></div>
+    <div class="row-pts" style="color:#f87171;">1/3</div>
+  </div>
+  <div class="tags"><span class="tag tg">정배열</span><span class="tag tx">신고가 —</span></div>
+  <div class="row">
+    <div class="row-label">캔들 형태</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="tags"><span class="tag tg">윗꼬리 짧음</span></div>
+  <div class="row">
+    <div class="row-label">기간 조정</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/1</div>
+  </div>
+  <div class="row">
+    <div class="row-label">수급</div>
+    <div class="bar-track"><div class="bar-fill" style="width:50.0%;background:linear-gradient(90deg,#78350f,#fbbf24);"></div></div>
+    <div class="row-pts" style="color:#fbbf24;">1/2</div>
+  </div>
+  <div class="tags"><span class="tag tr">외국인 순매도</span><span class="tag tg">기관 순매수</span></div>
+  <div class="row">
+    <div class="row-label">보너스</div>
+    <div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#1a1a1a;"></div></div>
+    <div class="row-pts" style="color:#444;">0/2</div>
+  </div>
+  <div class="tags"><span class="tag tx">조정폭 회복 —</span><span class="tag tx">되돌림 지지 —</span></div>
+</div>
+
+<div class="cl-card">
+  <h2>완료 점검 체크리스트 — 흥국화재</h2>
+<div class="cl-group">필수 조건 (미통과 시 자동 C등급)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">뉴스/재료 확인됨</span></div>
+<div class="cl-detail">3차 상법 개정안(자사주 소각 의무화) 통과 기대감으로 보험주 전반이 강세를 보이며 주가가 — 2/3점</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">거래대금 충족</span></div>
+<div class="cl-detail">1,283억 (기준: 500억 이상) — 1/3점</div>
+<div class="cl-group">기술적 분석</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">이평선 정배열 (close &gt; MA5 &gt; MA10 &gt; MA20)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">52주 신고가 근접 (현재가 ≥ 고가의 95%)</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">60일 고가 돌파</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">좋은 캔들 — 장대양봉, body 비율 높음</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">윗꼬리 짧음 — 매도 압력 낮음</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-group">수급</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">외국인 5일 순매수 -198,669</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">기관 5일 순매수 +32,477</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">한쪽 매수 확인 — 수급 1/2점</span></div>
+<div class="cl-group">보너스 패턴</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">기간조정 후 돌파 패턴</span></div>
+<div class="cl-detail">최근 20일 횡보 + 돌파 조건 미충족</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">조정폭 50% 회복</span></div>
+<div class="cl-detail">최근 10일 내 3% 이상 조정 후 반등 패턴 없음</div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">되돌림 지지 확인</span></div>
+<div class="cl-detail">돌파 후 이전 저항선에서 지지 패턴 없음</div>
+<div class="cl-group">부정적 조건</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">부정적 뉴스 없음</span></div>
+<div class="cl-group">품질 점수 산출 내역 (25/100)</div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">수급 — 한쪽 매수 +15점</span></div>
+<div class="cl-item"><div class="cl-icon ci-fail">–</div><span class="cl-text">총점 5점 — +0점</span></div>
+<div class="cl-item"><div class="cl-icon ci-pass">✓</div><span class="cl-text on">당일 상승률 +14.4% — +10점</span></div>
+<div class="cl-detail">5% 이내면 +20점 가능</div>
+
+  <div class="insight">
+    <div class="insight-icon">💡</div>
+    <div>
+      <p>
+        총점 <span class="hl-g">5/15</span>으로 <span class="hl-r">C등급</span> 달성.
+        필수 조건(뉴스+거래대금) 모두 통과.<br>
+        품질 점수 <span class="hl-r">25점</span>은 미흡.<br>
+        <span class="hl-r">미충족 4개</span>: 기간조정, 조정폭 회복, 되돌림 지지, 신고가/돌파
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

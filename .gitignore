@@ -1,0 +1,10 @@
+logs/
+charts/
+charts_kr/
+*.zip
+.env
+__pycache__/
+node_modules/
+.next/
+*.csv
+Autostock/

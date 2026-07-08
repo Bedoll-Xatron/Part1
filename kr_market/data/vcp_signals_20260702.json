@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-02",
+  "total_scanned": 50,
+  "vcp_detected": 2,
+  "signals": [
+    {
+      "code": "006400",
+      "name": "삼성SDI",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 34,
+      "c1": 34.02,
+      "c2": 24.05,
+      "c3": 10.6,
+      "r12": 1.41,
+      "r23": 2.27,
+      "pivot_high": 514000.0,
+      "foreign_5d": -296036,
+      "inst_5d": 222595
+    },
+    {
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 22,
+      "c1": 26.23,
+      "c2": 24.0,
+      "c3": 16.6,
+      "r12": 1.09,
+      "r23": 1.45,
+      "pivot_high": 400500.0,
+      "foreign_5d": 38583,
+      "inst_5d": -52706
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-04-15",
+  "signals": [
+    {
+      "ticker": "001250",
+      "name": "GS글로벌",
+      "market": "KOSPI",
+      "score": 8,
+      "flow_score": 3,
+      "trend_score": 3,
+      "vol_score": 2,
+      "foreign_flow": 33.7,
+      "institution_flow": 0.2,
+      "volume_ratio": 6.46,
+      "signal_strength": "strong",
+      "signal_date": "2026-04-15",
+      "price": 3330.0,
+      "change_pct": 16.4,
+      "ma20": 2997,
+      "ma60": 2635.0,
+      "trend": "above_both"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "avg_score": 8.0,
+    "strong": 1,
+    "moderate": 0,
+    "weak": 0
+  },
+  "processing_time_s": 14.9,
+  "updated_at": "2026-04-15T08:31:53.578140"
+}

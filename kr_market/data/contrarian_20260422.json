@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-22",
+  "signals": [
+    {
+      "ticker": "082270",
+      "name": "젬백스",
+      "market": "KOSDAQ",
+      "score": 6,
+      "oversold_score": 23.8,
+      "reversal_probability": 0.58,
+      "support_level": 22150.0,
+      "signal_date": "2026-04-22",
+      "rsi": 30.5,
+      "price": 23250.0,
+      "change_pct": -7.19
+    },
+    {
+      "ticker": "465770",
+      "name": "STX그린로지스",
+      "market": "KOSPI",
+      "score": 6,
+      "oversold_score": 15.0,
+      "reversal_probability": 0.58,
+      "support_level": 4995.0,
+      "signal_date": "2026-04-22",
+      "rsi": 34.0,
+      "price": 5200.0,
+      "change_pct": -13.19
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "avg_score": 6.0,
+    "high_prob": 0,
+    "avg_oversold": 19.4
+  },
+  "processing_time_s": 287.4,
+  "updated_at": "2026-04-22T18:13:06.128302"
+}

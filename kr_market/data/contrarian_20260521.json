@@ -1,0 +1,104 @@
+{
+  "date": "2026-05-21",
+  "signals": [
+    {
+      "ticker": "134380",
+      "name": "미원화학",
+      "market": "KOSPI",
+      "score": 10,
+      "oversold_score": 73.0,
+      "reversal_probability": 0.95,
+      "support_level": 11000.0,
+      "signal_date": "2026-05-21",
+      "rsi": 10.8,
+      "price": 11000.0,
+      "change_pct": -5.01
+    },
+    {
+      "ticker": "079000",
+      "name": "와토스코리아",
+      "market": "KOSDAQ",
+      "score": 8,
+      "oversold_score": 39.2,
+      "reversal_probability": 0.79,
+      "support_level": 5610.0,
+      "signal_date": "2026-05-21",
+      "rsi": 24.3,
+      "price": 6080.0,
+      "change_pct": -4.44
+    },
+    {
+      "ticker": "123330",
+      "name": "제닉",
+      "market": "KOSDAQ",
+      "score": 7,
+      "oversold_score": 24.7,
+      "reversal_probability": 0.68,
+      "support_level": 19340.0,
+      "signal_date": "2026-05-21",
+      "rsi": 30.1,
+      "price": 19550.0,
+      "change_pct": -2.81
+    },
+    {
+      "ticker": "199800",
+      "name": "툴젠",
+      "market": "KOSDAQ",
+      "score": 6,
+      "oversold_score": 8.2,
+      "reversal_probability": 0.58,
+      "support_level": 63000.0,
+      "signal_date": "2026-05-21",
+      "rsi": 36.7,
+      "price": 64700.0,
+      "change_pct": -5.16
+    },
+    {
+      "ticker": "023770",
+      "name": "플레이위드",
+      "market": "KOSDAQ",
+      "score": 5,
+      "oversold_score": 8.8,
+      "reversal_probability": 0.53,
+      "support_level": 2450.0,
+      "signal_date": "2026-05-21",
+      "rsi": 36.5,
+      "price": 2625.0,
+      "change_pct": -2.67
+    },
+    {
+      "ticker": "021820",
+      "name": "세원정공",
+      "market": "KOSPI",
+      "score": 5,
+      "oversold_score": 8.2,
+      "reversal_probability": 0.53,
+      "support_level": 12600.0,
+      "signal_date": "2026-05-21",
+      "rsi": 36.7,
+      "price": 13000.0,
+      "change_pct": -4.34
+    },
+    {
+      "ticker": "173940",
+      "name": "에프엔씨엔터",
+      "market": "KOSDAQ",
+      "score": 5,
+      "oversold_score": 3.0,
+      "reversal_probability": 0.48,
+      "support_level": 3410.0,
+      "signal_date": "2026-05-21",
+      "rsi": 38.8,
+      "price": 3645.0,
+      "change_pct": -3.79
+    }
+  ],
+  "stats": {
+    "total": 7,
+    "avg_score": 6.6,
+    "high_prob": 2,
+    "avg_oversold": 23.6
+  },
+  "processing_time_s": 37844.4,
+  "updated_at": "2026-05-22T20:17:37.549009"
+}

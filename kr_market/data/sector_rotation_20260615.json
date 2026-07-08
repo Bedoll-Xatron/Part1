@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-15",
+  "signals": [
+    {
+      "ticker": "274090",
+      "name": "켄코아에어로스페이스",
+      "market": "KOSDAQ",
+      "score": 0,
+      "sector": "방산/항공우주",
+      "rotation_phase": "markdown",
+      "relative_strength": 0.0,
+      "signal_date": "2026-05-24",
+      "price": 18100.0,
+      "ma20": 24625,
+      "ma60": 22684.0,
+      "rs_raw": -25.74
+    },
+    {
+      "ticker": "086520",
+      "name": "에코프로",
+      "market": "KOSDAQ",
+      "score": 0,
+      "sector": "배터리/전기차",
+      "rotation_phase": "markdown",
+      "relative_strength": 0.0,
+      "signal_date": "2026-05-24",
+      "price": 124000.0,
+      "ma20": 125665,
+      "ma60": 141608.0,
+      "rs_raw": -20.31
+    },
+    {
+      "ticker": "126340",
+      "name": "비나텍",
+      "market": "KOSDAQ",
+      "score": 0,
+      "sector": "배터리/전기차",
+      "rotation_phase": "markdown",
+      "relative_strength": 0.0,
+      "signal_date": "2026-05-24",
+      "price": 113900.0,
+      "ma20": 131670,
+      "ma60": 136132.0,
+      "rs_raw": -42.85
+    }
+  ],
+  "stats": {
+    "total": 3,
+    "avg_score": 0.0,
+    "sector_count": 2,
+    "avg_rs": 0.0
+  },
+  "processing_time_s": 14.6,
+  "updated_at": "2026-06-16T08:31:02.938844"
+}

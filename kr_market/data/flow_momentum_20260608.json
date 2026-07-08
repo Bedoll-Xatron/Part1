@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-08",
+  "signals": [
+    {
+      "ticker": "126340",
+      "name": "비나텍",
+      "market": "KOSDAQ",
+      "score": 3,
+      "flow_score": 2,
+      "trend_score": 0,
+      "vol_score": 1,
+      "foreign_flow": 183.2,
+      "institution_flow": -161.8,
+      "volume_ratio": 2.56,
+      "signal_strength": "weak",
+      "signal_date": "2026-06-08",
+      "price": 105900.0,
+      "change_pct": 19.1,
+      "ma20": 146925,
+      "ma60": 138753.0,
+      "trend": "below"
+    },
+    {
+      "ticker": "274090",
+      "name": "켄코아에어로스페이스",
+      "market": "KOSDAQ",
+      "score": 1,
+      "flow_score": 1,
+      "trend_score": 0,
+      "vol_score": 0,
+      "foreign_flow": 47.4,
+      "institution_flow": -19.9,
+      "volume_ratio": 1.16,
+      "signal_strength": "weak",
+      "signal_date": "2026-06-08",
+      "price": 20300.0,
+      "change_pct": 11.55,
+      "ma20": 24802,
+      "ma60": 22792.0,
+      "trend": "below"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "avg_score": 2.0,
+    "strong": 0,
+    "moderate": 0,
+    "weak": 2
+  },
+  "processing_time_s": 16.7,
+  "updated_at": "2026-06-09T08:36:03.475751"
+}

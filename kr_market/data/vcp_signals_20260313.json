@@ -1,0 +1,25 @@
+[
+  {
+    "code": "086820",
+    "name": "바이오솔루션",
+    "market": "KOSDAQ",
+    "grade": "B",
+    "score": 20,
+    "pivot_high": 8930.0,
+    "c1": 23.55,
+    "c2": 17.38,
+    "c3": 11.65,
+    "r12": 1.355,
+    "r23": 1.492,
+    "atrp": 10.03,
+    "entry_price": 12820,
+    "current_price": 11810,
+    "target_price": 13974,
+    "stop_price": 12179,
+    "return_pct": -5.0,
+    "status": "CLOSED",
+    "signal_date": "2026-03-13",
+    "foreign_5d": -31874,
+    "inst_5d": -924
+  }
+]

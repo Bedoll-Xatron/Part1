@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-24",
+  "signals": [
+    {
+      "ticker": "042520",
+      "name": "한스바이오메드",
+      "market": "KOSDAQ",
+      "score": 5,
+      "oversold_score": 5.0,
+      "reversal_probability": 0.48,
+      "support_level": 28800.0,
+      "signal_date": "2026-04-24",
+      "rsi": 38.0,
+      "price": 30200.0,
+      "change_pct": -5.33
+    },
+    {
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "market": "KOSPI",
+      "score": 5,
+      "oversold_score": 0.3,
+      "reversal_probability": 0.48,
+      "support_level": 164200.0,
+      "signal_date": "2026-04-24",
+      "rsi": 39.9,
+      "price": 171400.0,
+      "change_pct": -6.08
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "avg_score": 5.0,
+    "high_prob": 0,
+    "avg_oversold": 2.6
+  },
+  "processing_time_s": 222.0,
+  "updated_at": "2026-04-24T18:03:33.880695"
+}

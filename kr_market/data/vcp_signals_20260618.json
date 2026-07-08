@@ -1,0 +1,37 @@
+{
+  "date": "2026-06-18",
+  "total_scanned": 50,
+  "vcp_detected": 2,
+  "signals": [
+    {
+      "code": "042700",
+      "name": "한미반도체",
+      "market": "KOSPI",
+      "grade": "B",
+      "score": 20,
+      "c1": 34.98,
+      "c2": 29.24,
+      "c3": 20.0,
+      "r12": 1.2,
+      "r23": 1.46,
+      "pivot_high": 372500.0,
+      "foreign_5d": -81115,
+      "inst_5d": 792999
+    },
+    {
+      "code": "000270",
+      "name": "기아",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 50,
+      "c1": 19.82,
+      "c2": 14.2,
+      "c3": 8.33,
+      "r12": 1.4,
+      "r23": 1.71,
+      "pivot_high": 172900.0,
+      "foreign_5d": 809939,
+      "inst_5d": -198237
+    }
+  ]
+}
