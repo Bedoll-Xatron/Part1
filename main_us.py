@@ -8,8 +8,7 @@ import pandas as pd
 import yfinance as yf
 from dotenv import load_dotenv
 
-from google import genai
-from google.genai import types
+from openai import OpenAI
 
 load_dotenv()
 
@@ -21,8 +20,8 @@ _BASE = Path(__file__).parent
 OUTPUT_CSV = _BASE / "gemini_chart_analysis.csv"
 CHARTS_DIR = _BASE / "charts"
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-pro")
+NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY", "")
+NVIDIA_MODEL = "meta/llama-3.1-70b-instruct"
 
 # 대상 종목 (S&P 500 주요 종목 등)
 STOCKS = [
@@ -125,18 +124,20 @@ _PROMPT = """\
   "volume_trend": "증가|감소|보합"
 }}"""
 
-def _analyze_one(client: genai.Client, ticker: str, text_data: str) -> dict:
+def _analyze_one(client: OpenAI, ticker: str, text_data: str) -> dict:
     try:
-        resp = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=_PROMPT.format(ticker=ticker, text_data=text_data),
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                system_instruction="당신은 한국 시장 주식 분석가입니다. 출력 언어는 무조건 한국어입니다. reasons와 기타 텍스트를 절대 영어로 출력하지 말고 한국어로만 작성하세요."
-            ),
+        sys_instruction = "당신은 한국 시장 주식 분석가입니다. 출력 언어는 무조건 한국어입니다. reasons와 기타 텍스트를 절대 영어로 출력하지 말고 한국어로만 작성하세요."
+        resp = client.chat.completions.create(
+            model=NVIDIA_MODEL,
+            messages=[
+                {"role": "system", "content": sys_instruction},
+                {"role": "user", "content": _PROMPT.format(ticker=ticker, text_data=text_data)}
+            ],
+            temperature=0.2,
+            max_tokens=1024
         )
         
-        raw_text = resp.text.strip()
+        raw_text = resp.choices[0].message.content.strip()
         
         # JSON 블록 파싱 처리
         if "```json" in raw_text:
@@ -163,7 +164,7 @@ def _analyze_one(client: genai.Client, ticker: str, text_data: str) -> dict:
     except Exception as exc:
         import traceback
         traceback.print_exc()
-        print(f"[Gemini Error for {ticker}] {exc}")
+        print(f"[Nvidia Error for {ticker}] {exc}")
         return {
             "ticker": ticker,
             "signal": "ERROR", "confidence": 0.0,
@@ -180,9 +181,9 @@ def _pipeline():
         if data_str:
             ticker_data[ticker] = data_str
             
-    # 2. Gemini API 분석 (텍스트 기반)
-    print(f"Analyzing {len(ticker_data)} tickers via Gemini...")
-    client = genai.Client(api_key=GOOGLE_API_KEY)
+    # 2. LLM API 분석 (텍스트 기반)
+    print(f"Analyzing {len(ticker_data)} tickers via LLM...")
+    client = OpenAI(base_url="https://integrate.api.nvidia.com/v1", api_key=NVIDIA_API_KEY)
     
     results = []
     for ticker, text_data in ticker_data.items():

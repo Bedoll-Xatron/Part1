@@ -1,0 +1,115 @@
+{
+  "date": "2026-07-08",
+  "signals": [
+    {
+      "ticker": "263800",
+      "name": "데이타솔루션",
+      "market": "KOSDAQ",
+      "score": 6,
+      "theme": "AI",
+      "news_sentiment": 0.8,
+      "sns_momentum": 20,
+      "narrative_score": 6,
+      "signal_date": "2026-07-08",
+      "news_pts": 4,
+      "theme_pts": 2,
+      "vol_pts": 0,
+      "all_themes": [
+        "AI",
+        "AI반도체"
+      ],
+      "news_reason": "데이타솔루션이 삼성SDS와 4,381억원 규모의 AI 컴퓨팅 자원 활용 기반 강화 사업 계약을 체결하며 급락장 속에서도 상한가를 기록했습니다.",
+      "llm_source": "gemini",
+      "price": 6630.0,
+      "change_pct": 11.62,
+      "theme_peers": 2
+    },
+    {
+      "ticker": "089970",
+      "name": "브이엠",
+      "market": "KOSDAQ",
+      "score": 6,
+      "theme": "HBM",
+      "news_sentiment": 0.8,
+      "sns_momentum": 10,
+      "narrative_score": 6,
+      "signal_date": "2026-07-08",
+      "news_pts": 4,
+      "theme_pts": 2,
+      "vol_pts": 0,
+      "all_themes": [
+        "HBM",
+        "AI반도체",
+        "반도체 소부장"
+      ],
+      "news_reason": "SK하이닉스의 AI 서버용 HBM 수요 증가에 따른 설비투자 확대로 국내 유일의 전공정 식각장비 제조사인 브이엠의 수주 및 실적 개선 기대감이 매우 높습니다.",
+      "llm_source": "gemini",
+      "price": 92300.0,
+      "change_pct": 8.59,
+      "theme_peers": 2
+    },
+    {
+      "ticker": "477850",
+      "name": "마키나락스",
+      "market": "KOSDAQ",
+      "score": 5,
+      "theme": "AI",
+      "news_sentiment": 0.5,
+      "sns_momentum": 20,
+      "narrative_score": 5,
+      "signal_date": "2026-07-08",
+      "news_pts": 3,
+      "theme_pts": 2,
+      "vol_pts": 0,
+      "all_themes": [
+        "AI",
+        "방산",
+        "반도체"
+      ],
+      "news_reason": "대규모 인력 채용을 통해 AI 솔루션의 산업 현장 적용 및 사업 확장을 추진하고 있으며, 이는 향후 실적 개선 및 신사업 기대감을 높이는 긍정적인 신호입니다.",
+      "llm_source": "gemini",
+      "price": 29450.0,
+      "change_pct": 8.67,
+      "theme_peers": 2
+    },
+    {
+      "ticker": "095610",
+      "name": "테스",
+      "market": "KOSDAQ",
+      "score": 2,
+      "theme": "기타",
+      "news_sentiment": 0.2,
+      "sns_momentum": 10,
+      "narrative_score": 2,
+      "signal_date": "2026-07-08",
+      "news_pts": 2,
+      "theme_pts": 0,
+      "vol_pts": 0,
+      "all_themes": [],
+      "news_reason": "Keyword analysis",
+      "llm_source": "keyword_fallback",
+      "price": 144200.0,
+      "change_pct": 6.26,
+      "theme_peers": 0
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "avg_score": 4.8,
+    "top_theme": "반도체",
+    "avg_sentiment": 0.58,
+    "theme_map": {
+      "재개발": 1,
+      "건설": 1,
+      "반도체": 2,
+      "소부장": 1,
+      "HBM": 2,
+      "AI": 2,
+      "AI반도체": 2,
+      "반도체 소부장": 1,
+      "방산": 1
+    }
+  },
+  "processing_time_s": 86.4,
+  "updated_at": "2026-07-09T09:11:20.205116"
+}

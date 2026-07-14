@@ -16,8 +16,7 @@ import mplfinance as mpf
 import pandas as pd
 import yfinance as yf
 from flask import Blueprint, jsonify, request, send_file
-from google import genai
-from google.genai import types
+from openai import OpenAI
 
 chart_bp = Blueprint("chart_analysis", __name__)
 
@@ -28,8 +27,8 @@ chart_bp = Blueprint("chart_analysis", __name__)
 _BASE = Path(__file__).parent.parent.parent          # Part7/
 CHARTS_DIR = _BASE / "charts_kr"
 OUTPUT_CSV = _BASE / "gemini_chart_analysis_kr.csv"
-GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash-preview")
+NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "")
+NVIDIA_MODEL: str = "meta/llama-3.1-70b-instruct"
 SEMAPHORE_LIMIT = 10
 
 # ---------------------------------------------------------------------------
@@ -208,18 +207,20 @@ _PROMPT = """\
 }}"""
 
 
-def _analyze_one(client: genai.Client, ticker: str, name: str, text_data: str) -> dict:
+def _analyze_one(client: OpenAI, ticker: str, name: str, text_data: str) -> dict:
     try:
-        resp = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=_PROMPT.format(name=name, ticker=ticker, text_data=text_data),
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                system_instruction="당신은 한국 주식 분석가입니다. 출력 언어는 무조건 '한국어'만 허용됩니다. reasons와 기타 텍스트를 절대 영어로 쓰지 말고 반드시 한국어로만 작성하세요."
-            ),
+        sys_instruction = "당신은 한국 주식 분석가입니다. 출력 언어는 무조건 '한국어'만 허용됩니다. reasons와 기타 텍스트를 절대 영어로 쓰지 말고 반드시 한국어로만 작성하세요."
+        resp = client.chat.completions.create(
+            model=NVIDIA_MODEL,
+            messages=[
+                {"role": "system", "content": sys_instruction},
+                {"role": "user", "content": _PROMPT.format(name=name, ticker=ticker, text_data=text_data)}
+            ],
+            temperature=0.2,
+            max_tokens=1024
         )
         
-        raw_text = resp.text.strip()
+        raw_text = resp.choices[0].message.content.strip()
         
         # JSON 파싱
         if "```json" in raw_text:
@@ -255,7 +256,7 @@ def _analyze_one(client: genai.Client, ticker: str, name: str, text_data: str) -
 
 
 async def _run_analysis(chart_data: dict[str, str]) -> list[dict]:
-    client = genai.Client(api_key=GOOGLE_API_KEY)
+    client = OpenAI(base_url="https://integrate.api.nvidia.com/v1", api_key=NVIDIA_API_KEY)
     semaphore = asyncio.Semaphore(SEMAPHORE_LIMIT)
     executor = ThreadPoolExecutor(max_workers=SEMAPHORE_LIMIT)
     loop = asyncio.get_event_loop()

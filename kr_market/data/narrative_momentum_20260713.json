@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-14",
+  "date": "2026-07-13",
   "signals": [],
   "stats": {
     "total": 0,
@@ -8,6 +8,6 @@
     "avg_sentiment": 0.0,
     "theme_map": {}
   },
-  "processing_time_s": 1.8,
-  "updated_at": "2026-07-14T08:31:23.385907"
+  "processing_time_s": 1.6,
+  "updated_at": "2026-07-14T08:30:46.583204"
 }

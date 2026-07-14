@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-14",
+  "date": "2026-07-10",
   "signals": [],
   "stats": {
     "total": 0,
@@ -7,8 +7,8 @@
     "high_prob": 0,
     "avg_oversold": 0.0
   },
-  "processing_time_s": 12.0,
-  "updated_at": "2026-07-14T08:31:39.049588",
+  "processing_time_s": 11.2,
+  "updated_at": "2026-07-13T08:31:12.688199",
   "regime": "CAUTION",
   "regime_score": 3,
   "regime_blocked": true

@@ -38,7 +38,7 @@ _DATA_DIR   = os.path.normpath(os.path.join(_ENGINE_DIR, '..', 'data'))
 sys.path.insert(0, _ENGINE_DIR)
 
 from collectors import get_stock_news   # type: ignore
-from llm_analyzer import GeminiAnalyzer  # type: ignore
+from llm_analyzer import NvidiaAnalyzer  # type: ignore
 
 
 # ── 상수 ───────────────────────────────────────────────────────────
@@ -199,7 +199,7 @@ def collect_all_news(universe: list[_Candidate]) -> dict[str, list]:
 # ── LLM 배치 분석 (비동기) ────────────────────────────────────────
 
 async def _analyze_one(
-    analyzer: GeminiAnalyzer,
+    analyzer: NvidiaAnalyzer,
     code: str,
     name: str,
     news_items: list,
@@ -217,11 +217,11 @@ async def run_llm_batch(
     max_concurrent: int = 5,
 ) -> dict[str, dict]:
     """
-    모든 종목에 대해 Gemini LLM을 병렬 실행.
+    모든 종목에 대해 LLM을 병렬 실행.
     뉴스가 없는 종목은 건너뜀.
     """
-    # Gemini rate-limit 방지 (순차 처리 + 3초 대기)
-    analyzer = GeminiAnalyzer()
+    # LLM rate-limit 방지 (순차 처리 + 대기)
+    analyzer = NvidiaAnalyzer()
     sem      = asyncio.Semaphore(1)
 
     tasks = [
